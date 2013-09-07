@@ -4,12 +4,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.matheus.pulsometro.MyVars.TYPE;
 
+import com.matheus.pulsometro.Browser;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
@@ -20,6 +24,8 @@ import android.view.View;
 import android.widget.TextView;
 
 @SuppressLint("NewApi")
+
+
 public class Pulsometro extends Activity {
 
     
@@ -142,8 +148,13 @@ public class Pulsometro extends Activity {
                 int dpm = (int) (bps * 60d);
                 if (dpm < 30 || dpm > 180) {
                 	MyVars.startTime = System.currentTimeMillis();
+                	int beats = (int)MyVars.beats;
                 	MyVars.beats = 0;
                 	MyVars.processing.set(false);
+
+                    Browser browser = new Browser();
+                    browser.callBrowser(beats);
+                	
                     return;
                 }
 
@@ -166,11 +177,17 @@ public class Pulsometro extends Activity {
                 MyVars.text.setText(String.valueOf(beatsAvg));
                 MyVars.startTime = System.currentTimeMillis();
                 MyVars.beats = 0;
+                
+                
             }
+
+
             MyVars.processing.set(false);
         }
     };
 
+   
+    
     private static SurfaceHolder.Callback surfaceCallback = new SurfaceHolder.Callback() {
 
         /**
