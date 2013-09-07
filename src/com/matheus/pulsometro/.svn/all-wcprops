@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/11/trunk/src/com/jwetherell/heart_rate_monitor
+END
+ImageProcessing.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/11/trunk/src/com/jwetherell/heart_rate_monitor/ImageProcessing.java
+END
+HeartRateMonitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/11/trunk/src/com/jwetherell/heart_rate_monitor/HeartRateMonitor.java
+END
+HeartbeatView.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/11/trunk/src/com/jwetherell/heart_rate_monitor/HeartbeatView.java
+END
